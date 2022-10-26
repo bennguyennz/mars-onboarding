@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using Onboarding.Utilities;
+using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,10 +13,10 @@ namespace Onboarding.Pages
     class Login
     {
         #region Page objects
-        private IWebElement SignInBtn => driver.FindElement(By.XPath("//A[@class='item'][text()='Sign In']"));
-        private IWebElement Email => driver.FindElement(By.XPath("(//INPUT[@type='text'])[2]"));
-        private IWebElement Password => driver.FindElement(By.XPath("//INPUT[@type='password']"));
-        private IWebElement LoginBtn => driver.FindElement(By.XPath("//BUTTON[@class='fluid ui teal button'][text()='Login']"));
+        private IWebElement SignInBtn => driver.FindElement(By.XPath("//a[@class='item']"));
+        private IWebElement Email => driver.FindElement(By.Name("email"));
+        private IWebElement Password => driver.FindElement(By.XPath("//input[@name='password']"));
+        private IWebElement LoginBtn => driver.FindElement(By.XPath("//button[@class='fluid ui teal button']"));
         #endregion
 
         public void LogInSteps()
@@ -34,6 +35,9 @@ namespace Onboarding.Pages
 
             //Click Login button
             LoginBtn.Click();
+
+            //This Thread.Sleep is for viewing successful login only. It can be deleted.
+            Thread.Sleep(3);
         }
     }
 }

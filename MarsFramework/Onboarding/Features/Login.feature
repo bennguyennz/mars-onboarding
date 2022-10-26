@@ -1,6 +1,6 @@
 ﻿Feature: Login
 
-A short summary of the feature
+As a Seller, I need a feature which allows me to login Mars so that I can interact with my profile.
 
 @mytag
 Scenario: Login

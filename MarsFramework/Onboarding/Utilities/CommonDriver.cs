@@ -19,7 +19,7 @@ namespace Onboarding.Utilities
     [Binding]
     class CommonDriver
     {
-        [ThreadStatic]
+        //[ThreadStatic]
         public static IWebDriver driver;
         Login loginObj;
 
